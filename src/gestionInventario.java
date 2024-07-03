@@ -15,7 +15,12 @@ public class gestionInventario {
 
         actualizarInventario(inventario, ventas);
 
+        generarAlertas(inventario, limite_critico, alertas);
+
+
         mostrarInventario(nombresProductos, inventario, "\nInventario final:");
+
+        mostrarAlertas(nombresProductos, alertas);
     }
 
     private static void actualizarInventario(int[] inventario, int[] ventas) {
@@ -30,4 +35,22 @@ public class gestionInventario {
             System.out.println(nombres[i] + ": " + inventario[i] + " unidades"); // Mostrar nombre y cantidad de cada producto
         }
     }
+
+    private static void generarAlertas(int[] inventario, int[] limite_critico, boolean[] alertas) {
+        for (int i = 0; i < inventario.length; i++) {
+            if (inventario[i] <= limite_critico[i]) {
+                alertas[i] = true;
+            }
+        }
+    }
+
+    private static void mostrarAlertas(String[] nombres, boolean[] alertas) {
+        System.out.println("\nAlertas de Reabastecimiento:");
+        for (int i = 0; i < alertas.length; i++) {
+            if (alertas[i]) {
+                System.out.println("Reabastecer " + nombres[i]);
+            }
+        }
+    }
 }
+
