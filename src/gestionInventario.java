@@ -12,6 +12,16 @@ public class gestionInventario {
         int[] ventas = {10, 30, 5, 0};
 
         mostrarInventario(nombresProductos, inventario, "Inventario inicial:");
+
+        actualizarInventario(inventario, ventas);
+
+        mostrarInventario(nombresProductos, inventario, "\nInventario final:");
+    }
+
+    private static void actualizarInventario(int[] inventario, int[] ventas) {
+        for (int i = 0; i < inventario.length; i++) {
+            inventario[i] -= ventas[i];
+        }
     }
 
     private static void mostrarInventario(String[] nombres, int[] inventario, String nombre) {
