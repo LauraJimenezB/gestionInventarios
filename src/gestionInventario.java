@@ -1,6 +1,5 @@
 public class gestionInventario {
 
-    // Función principal del programa
     public static void main(String[] args) {
         String[] nombresProductos = {"Producto A", "Producto B", "Producto C", "Producto D"};
         int[] inventario = {100, 50, 20, 5};
@@ -15,7 +14,7 @@ public class gestionInventario {
         mostrarInventario(nombresProductos, inventario, "Inventario inicial:");
     }
 
-    public static void mostrarInventario(String[] nombres, int[] inventario, String nombre) {
+    private static void mostrarInventario(String[] nombres, int[] inventario, String nombre) {
         System.out.println(nombre);
         for (int i = 0; i < inventario.length; i++) {
             System.out.println(nombres[i] + ": " + inventario[i] + " unidades"); // Mostrar nombre y cantidad de cada producto
